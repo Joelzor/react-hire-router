@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import HireForm from "./components/HireForm";
 
-function PersonProfile(props) {
+function PersonProfile({ hiredPeople, setHiredPeople }) {
   const [person, setPerson] = useState(null);
 
   const location = useLocation();
@@ -11,7 +11,7 @@ function PersonProfile(props) {
     if (location.state) {
       setPerson(location.state.person);
     }
-  }, [person]);
+  }, [location]);
 
   if (!person) return <p>Loading...</p>;
 
@@ -20,7 +20,11 @@ function PersonProfile(props) {
       <h2>
         {person.name.first} {person.name.last}
       </h2>
-      <HireForm person={person} />
+      <HireForm
+        person={person}
+        hiredPeople={hiredPeople}
+        setHiredPeople={setHiredPeople}
+      />
     </article>
   );
 }
