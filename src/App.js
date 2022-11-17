@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, Routes, Route } from "react-router-dom";
 import "./styles.css";
 
@@ -8,6 +8,10 @@ import EditProfile from "./pages/EditProfile";
 
 export default function App() {
   const [hiredPeople, setHiredPeople] = useState([]);
+
+  useEffect(() => {
+    console.log(hiredPeople);
+  }, [hiredPeople]);
 
   return (
     <>
