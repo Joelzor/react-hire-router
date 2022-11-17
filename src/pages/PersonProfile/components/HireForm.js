@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function HireForm({ hiredPeople, setHiredPeople, person }) {
-  const [wage, setWage] = useState("");
+  const [wage, setWage] = useState(100);
 
   const navigate = useNavigate();
 

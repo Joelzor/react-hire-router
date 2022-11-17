@@ -12,6 +12,15 @@ function PeopleListItem(props) {
       <Link to={`/view/${person.login.uuid}`} state={{ person }}>
         View profile
       </Link>
+      {person.wage && (
+        <Link
+          to={`/edit/${person.login.uuid}`}
+          state={{ person }}
+          className="link-btn"
+        >
+          Edit profile
+        </Link>
+      )}
     </li>
   );
 }

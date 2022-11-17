@@ -4,6 +4,7 @@ import "./styles.css";
 
 import Dashboard from "./pages/Dashboard";
 import PersonProfile from "./pages/PersonProfile/index";
+import EditProfile from "./pages/EditProfile";
 
 export default function App() {
   const [hiredPeople, setHiredPeople] = useState([]);
@@ -26,6 +27,15 @@ export default function App() {
           path="/view/:id"
           element={
             <PersonProfile
+              hiredPeople={hiredPeople}
+              setHiredPeople={setHiredPeople}
+            />
+          }
+        />
+        <Route
+          path="/edit/:id"
+          element={
+            <EditProfile
               hiredPeople={hiredPeople}
               setHiredPeople={setHiredPeople}
             />
